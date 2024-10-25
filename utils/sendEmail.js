@@ -17,7 +17,7 @@ module.exports = async (userEmail, subject, htmlTemplate) => {
     });
 
     const mailOption = {
-      from: `"www.artilo.site 🎨 " <${process.env.EMAIL}>`,
+      from: `"artilo.site 🎨 " <${process.env.EMAIL}>`,
       to: userEmail,
       subject: subject,
       html: htmlTemplate,
