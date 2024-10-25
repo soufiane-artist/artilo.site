@@ -160,7 +160,7 @@ module.exports.createrequest = (async(req,res)=>{
           `
           //ارسال البيانات الى قسم سيند ايمايل حسب الترتيب
           await setEmail(req.body.email, "Free file 🖼️🎨", htmlTemplate);
-         res.json({message : 'check your email'})
+          res.json({ message: 'Check your email. If you don\'t find the email in your inbox, please check your spam or junk folder.' });
         })
         //
 
