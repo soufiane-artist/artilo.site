@@ -164,7 +164,7 @@ module.exports.createrequest = (async(req,res)=>{
         })
         //
 
-        module.exports.createOrderSold = (async(req,res)=>{
+module.exports.createOrderSold = (async(req,res)=>{
 
             const {fullname,total,username,email} = req.body
             
@@ -219,4 +219,14 @@ module.exports.createrequest = (async(req,res)=>{
                   //ارسال البيانات الى قسم سيند ايمايل حسب الترتيب
                   await setEmail("artilo.site@gmail.com", "طلبية جديدة", htmlTemplate2);
                  res.json({order: order,token:verifytoken})
-                })
+    })
+
+module.exports.getAllFreefile= async(req,res)=>{
+    const freefiles = await Freefile.find().sort({ createdAt: -1 })
+    const prodersProject = freefiles.map(freefile =>{
+        return {
+            email : freefile.email,
+        }
+    })
+    res.json(prodersProject)   
+}

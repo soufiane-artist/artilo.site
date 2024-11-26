@@ -1,5 +1,5 @@
 const { newMessage } = require('../controller/MessageC');
-const { createOrder, verfyTokenOrder, getAllOrders, deleteAllOrders, createrequest, createOrderSold } = require('../controller/Order');
+const { createOrder, verfyTokenOrder, getAllOrders, deleteAllOrders, createrequest, createOrderSold, getAllFreefile } = require('../controller/Order');
 const { CreateNewPost, getPost, createVideo, getAllPosts, createImagePost, deleteAllPosts, deletePostById } = require('../controller/Post')
 const photoUplaod = require('../utils/imges')
 
@@ -25,4 +25,5 @@ router.delete('/post/:id',deletePostById)
 router.post('/send-message',newMessage)
 // free file
 router.post('/freefile',createrequest)
+router.get('/freefiles',getAllFreefile)
 module.exports = router
